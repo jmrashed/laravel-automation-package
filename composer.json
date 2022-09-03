@@ -1,0 +1,30 @@
+{
+    "name": "jmrashed/automation",
+    "description": "This Automation package will help to laravel development.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Md Rasheduzzaman",
+            "email": "jmrashed@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Jmrashed\\Automation\\": "src",
+            "Jmrashed\\Automation\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jmrashed\\Automation\\AutomationServiceProvider"
+            ],
+            "aliases": {
+                "Calculator": "Jmrashed\\Automation\\Facades\\Automation"
+            }
+        }
+    }
+}
