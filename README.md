@@ -1,5 +1,16 @@
-Whenever someone includes this package, the service provider will be loaded, and everything we've registered will be available in the application.
-Important: this feature is available starting from Laravel 5.5. With version 5.4 or below, you must register your service providers manually in the providers section of the config/app.php configuration file in your laravel project.\
+## Laravel Automation Package
+
+This package help you to build a crud system without any coding.
+
+## Installation
+
+Require this package with composer. It is recommended to only require the package for development.
+`composer require jmrashed/automation --dev`
+Laravel uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider.
+
+# Laravel without auto-discovery:
+
+If you don't use auto-discovery, add the ServiceProvider to the providers array in config/app.php
 
 ```php
     // 'config/app.php'
@@ -12,10 +23,18 @@ Important: this feature is available starting from Laravel 5.5. With version 5.4
     ],
 ```
 
-```php
-    php artisan vendor:publish --provider="Jmrashed\Automation\AutomationServiceProvider" --tag="config"
-```
+If you want to use the facade to log messages, add this to your facades in app.php:
 
-```php
-    php artisan vendor:publish --provider="JohnDoe\BlogPackage\BlogPackageServiceProvider" --tag="migrations"
-```
+`php 'Automation' => Jmrashed\Automation\Facades\Automation::class,`
+
+## publish
+
+`php artisan vendor:publish --provider="Jmrashed\Automation\AutomationServiceProvider"`
+
+## Usage in Controller
+
+`php Automation::create('Model');`
+
+## Usage in Blade
+
+`{{ automation('Model')}}`
