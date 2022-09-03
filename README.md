@@ -1,3 +1,5 @@
+<img src="Laravel-Automation-Package.jpg" width="1190"/>
+
 ## Laravel Automation Package
 
 This package help you to build a crud system without any coding.
@@ -35,7 +37,10 @@ If you want to use the facade to log messages, add this to your facades in app.p
 
 ## publish
 
-`php artisan vendor:publish --provider="Jmrashed\Automation\AutomationServiceProvider"`
+```
+artisan vendor:publish --provider="Jmrashed\Automation\AutomationServiceProvider"
+
+```
 
 ## Usage in Controller
 
