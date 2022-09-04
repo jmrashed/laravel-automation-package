@@ -2,6 +2,7 @@
 
 namespace Jmrashed\Automation;
 use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Routing\Router;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Console\Scheduling\Schedule;
