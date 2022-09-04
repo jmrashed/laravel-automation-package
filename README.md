@@ -78,6 +78,19 @@ The assets can then be exported by users of our package using:
     php artisan vendor:publish --provider="Jmrashed\Automation\App\Providers\AutomationServiceProvider" --tag="assets"
 ```
 
+## Directory Structure
+
+```
+    - src
+    - tests
+    CHANGELOG.md
+    README.md
+    LICENSE
+    composer.json
+```
+
+In a package, all code that would live in the app/ directory of a Laravel application will live in the src/ directory when working with a package.
+
 ## Contributing
 
 Thank you for considering contributing to UI! The contribution guide can be found in the Laravel documentation.

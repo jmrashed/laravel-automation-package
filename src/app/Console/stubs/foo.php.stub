@@ -1,0 +1,13 @@
+<?php
+
+namespace DummyNamespace;
+
+use Jmrashed\Automation\Foo;
+
+class DummyClass implements Foo
+{
+    public function myFoo()
+    {
+        // foo
+    }
+}

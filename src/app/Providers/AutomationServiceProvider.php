@@ -5,8 +5,10 @@ namespace Jmrashed\Automation\App\Providers;
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider;
-use Jmrashed\Automation\App\Http\Middleware\AutomationMiddleware;
+use Jmrashed\Automation\App\Console\MakeFooCommand;
 use Jmrashed\Automation\App\Facades\AutomationFacade;
+use Jmrashed\Automation\App\Console\AutomationConsole;
+use Jmrashed\Automation\App\Http\Middleware\AutomationMiddleware;
 
 class AutomationServiceProvider extends ServiceProvider
 {
@@ -28,15 +30,51 @@ class AutomationServiceProvider extends ServiceProvider
 
     public function boot(Kernel $kernel)
     {
+
         // Register the command if we are using the application via the CLI
         if ($this->app->runningInConsole()) {
+            $this->commands([
+                AutomationConsole::class,
+                MakeFooCommand::class,
+            ]);
+        }
+
+        // Merging Into the Existing Configuration
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'automation');
 
 
+        // Register the command if we are using the application via the CLI
+
+
+
+
+        // src\config\config.php
+
+
+
+        if ($this->app->runningInConsole()) {
             // Publish the config file
             $this->publishes([
                 __DIR__ . '/../config/config.php' => config_path('automation.php'),
             ], 'config');
             // The tag that can be used when publishing the config file. 
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        if ($this->app->runningInConsole()) {
 
 
 
@@ -134,11 +172,9 @@ class AutomationServiceProvider extends ServiceProvider
 
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
 
-        // $this->loadViewsFrom(__DIR__ . '/../resources/views', 'automation');
-
-        // $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'automation');
-
-        // $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'automation');
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'automation');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
 
         // Register the middleware

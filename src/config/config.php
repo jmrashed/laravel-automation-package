@@ -2,5 +2,5 @@
 
 return [
     'prefix' => 'automation',
-    'middleware' => ['web'], 
+    'middleware' => ['web'],
 ];
