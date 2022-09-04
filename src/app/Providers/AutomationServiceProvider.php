@@ -3,6 +3,7 @@
 namespace Jmrashed\Automation\App\Providers;
 
 
+use Illuminate\Routing\Router;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider;
 use Jmrashed\Automation\App\Console\MakeFooCommand;
@@ -40,7 +41,7 @@ class AutomationServiceProvider extends ServiceProvider
         }
 
         // Merging Into the Existing Configuration
-        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'automation');
+        $this->mergeConfigFrom(__DIR__ . '/../../config/config.php', 'automation');
 
 
         // Register the command if we are using the application via the CLI
@@ -170,11 +171,10 @@ class AutomationServiceProvider extends ServiceProvider
 
         }
 
-        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
-
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'automation');
-        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'automation');
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadRoutesFrom(__DIR__ . '/../../routes/web.php');
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'automation');
+        $this->loadTranslationsFrom(__DIR__ . '/../../resources/lang', 'automation');
+        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
 
 
         // Register the middleware
