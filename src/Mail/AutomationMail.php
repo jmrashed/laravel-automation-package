@@ -1,6 +1,4 @@
 <?php
-// 'src/Mail/WelcomeMail.php'
-
 namespace Jmrashed\Automation\Mail;
 
 use Illuminate\Bus\Queueable;

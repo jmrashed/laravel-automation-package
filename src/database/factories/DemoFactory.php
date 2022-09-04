@@ -2,7 +2,6 @@
 
 namespace Jmrashed\Automation\Database\Factories;
 
-use Jmrashed\Automation\Models\Demo;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Jmrashed\Automation\Models\DemoModel;
 
@@ -14,7 +13,7 @@ class DemoFactory extends Factory
     public function definition()
     {
         return [
-            'status'     => $this->faker->rand(1, 10)
+            'status_id'     => $this->faker->rand(1, 10)
         ];
     }
 }

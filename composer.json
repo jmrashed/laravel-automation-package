@@ -14,7 +14,9 @@
     "autoload": {
         "psr-4": {
             "Jmrashed\\Automation\\": "src",
-            "Jmrashed\\Automation\\Database\\Factories\\": "Database/Factories"
+            "Jmrashed\\Automation\\Database\\Factories\\": "database/factories",
+            "Jmrashed\\Automation\\Database\\Seeders\\": "database/seeders"
+
         }
     },
     "extra": {
