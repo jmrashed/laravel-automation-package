@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Jmrashed\Automation\Http\Middleware;
 
 use Closure;
+use Illuminate\Auth\Middleware\Authenticate as Middleware;
 
-class AutomationMiddleware
+class AutomationMiddleware  extends Middleware
 {
     public function handle($request, Closure $next)
     {
-        // Perform action
-
         return $next($request);
     }
 }

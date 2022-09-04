@@ -1,13 +1,13 @@
 <?php
+
 namespace Jmrashed\Automation\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
-use Jmrashed\Automation\Models;
 use Illuminate\Queue\SerializesModels;
 use Jmrashed\Automation\Models\DemoModel;
 
-class WelcomeMail extends Mailable
+class AutomationMail extends Mailable
 {
     use Queueable, SerializesModels;
 
