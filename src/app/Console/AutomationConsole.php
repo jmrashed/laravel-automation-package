@@ -1,6 +1,6 @@
 <?php
 
-namespace Jmrashed\Automation\Console;
+namespace Jmrashed\Automation\App\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
@@ -49,7 +49,7 @@ class AutomationConsole extends Command
     private function publishConfiguration($forcePublish = false)
     {
         $params = [
-            '--provider' => "Jmrashed\Automation\AutomationServiceProvider",
+            '--provider' => "Jmrashed\Automation\App\Providers\AutomationServiceProvider",
             '--tag' => "config"
         ];
 

@@ -1,6 +1,8 @@
 <?php
 
-namespace Jmrashed\Automation\Http\Controllers;
+namespace Jmrashed\Automation\App\Http\Controllers;
+
+use Jmrashed\Automation\App\Http\Controllers\Controller;
 
 class AutomationController extends Controller
 {
@@ -8,7 +10,6 @@ class AutomationController extends Controller
     public function __construct()
     {
         $this->middleware('automation');
-        
     }
     public function index()
     {
@@ -27,8 +28,8 @@ class AutomationController extends Controller
     {
         // Let's assume we need to be authenticated
         // to create a new post
-        if (! auth()->check()) {
-            abort (403, 'Only authenticated users can create new posts.');
+        if (!auth()->check()) {
+            abort(403, 'Only authenticated users can create new posts.');
         }
 
         request()->validate([

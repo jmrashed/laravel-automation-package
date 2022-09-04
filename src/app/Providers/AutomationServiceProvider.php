@@ -1,16 +1,12 @@
 <?php
 
-namespace Jmrashed\Automation;
+namespace Jmrashed\Automation\App\Providers;
 
-use Illuminate\Routing\Route;
-use Illuminate\Routing\Router;
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Console\Scheduling\Schedule;
-use App\Http\Middleware\AutomationMiddleware;
-use Jmrashed\Automation\Facades\AutomationFacade;
-use Jmrashed\Automation\Console\AutomationConsole;
+use Jmrashed\Automation\App\Http\Middleware\AutomationMiddleware;
+use Jmrashed\Automation\App\Facades\AutomationFacade;
 
 class AutomationServiceProvider extends ServiceProvider
 {
@@ -26,15 +22,15 @@ class AutomationServiceProvider extends ServiceProvider
 
     }
 
-    
 
- 
+
+
 
     public function boot(Kernel $kernel)
     {
         // Register the command if we are using the application via the CLI
         if ($this->app->runningInConsole()) {
-          
+
 
             // Publish the config file
             $this->publishes([
@@ -131,12 +127,12 @@ class AutomationServiceProvider extends ServiceProvider
 
 
 
- 
+
 
 
         }
 
-        // $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
 
         // $this->loadViewsFrom(__DIR__ . '/../resources/views', 'automation');
 
@@ -148,18 +144,14 @@ class AutomationServiceProvider extends ServiceProvider
         // Register the middleware
         $kernel->pushMiddleware(AutomationMiddleware::class);
 
-       
 
- 
+
+
 
 
         // router middleware 
 
         $router = $this->app->make(Router::class);
         $router->aliasMiddleware('automation', AutomationMiddleware::class);
-
-         
     }
-
-
 }

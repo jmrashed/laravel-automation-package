@@ -1,6 +1,6 @@
 <?php
 
-namespace Jmrashed\Automation\Mail;
+namespace Jmrashed\Automation\App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;

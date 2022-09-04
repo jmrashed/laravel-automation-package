@@ -1,6 +1,6 @@
 <?php
 
-namespace Jmrashed\Automation\Facades;
+namespace Jmrashed\Automation\App\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

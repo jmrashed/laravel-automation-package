@@ -1,11 +1,11 @@
 <!-- src/Notifications/AutomationWasPublishedNotification.php -->
 <?php
 
-namespace Jmrashed\Automation\Notifications;
+namespace Jmrashed\Automation\App\Notifications;
 
+use Illuminate\Notifications\Notification; 
+use Jmrashed\Automation\App\Models\DemoModel;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notification;
-use Jmrashed\Automation\Models\DemoModel;
 
 class AutomationWasPublishedNotification extends Notification
 {

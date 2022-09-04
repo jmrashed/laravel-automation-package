@@ -5,18 +5,20 @@
 This package help you to build a crud system without any coding.
 
 ## Introduction
+
 This package help you to build a crud system without any coding.
 
 ## Supported Versions
+
 Only the latest major version of Laravel UI receives bug fixes. The table below lists compatible Laravel versions:
 
-| Version       | Laravel Version   |
-| ------------- | -------------     |
-| 1.x           | 7.x, 8.x          |
-| 2.x           | 9.x               |
-
+| Version | Laravel Version |
+| ------- | --------------- |
+| 1.x     | 7.x, 8.x        |
+| 2.x     | 9.x             |
 
 ## Installation
+
 Require this package with composer. It is recommended to only require the package for development.
 
 ```
@@ -41,13 +43,13 @@ If you don't use auto-discovery, add the ServiceProvider to the providers array 
 If you want to use the facade to log messages, add this to your facades in app.php:
 
 ```php
- 'Automation' => Jmrashed\Automation\Facades\Automation::class,
+ 'Automation' => Jmrashed\Automation\App\Facades\Automation::class,
 ```
 
 ## Publish Laravel Automation Package
 
 ```
-    artisan vendor:publish --provider="Jmrashed\Automation\AutomationServiceProvider"
+    artisan vendor:publish --provider="Jmrashed\Automation\App\Providers\AutomationServiceProvider"
 ```
 
 ## Usage in Controller
@@ -64,35 +66,30 @@ If you want to use the facade to log messages, add this to your facades in app.p
     {{ automation('Model')}}
 ```
 
-
-
 The views can then be exported by users of our package using:
 
 ```
-    php artisan vendor:publish --provider="Jmrashed\Automation\AutomationServiceProvider" --tag="views"
+    php artisan vendor:publish --provider="Jmrashed\Automation\App\Providers\AutomationServiceProvider" --tag="views"
 ```
-
-
 
 The assets can then be exported by users of our package using:
 
 ```
-    php artisan vendor:publish --provider="Jmrashed\Automation\AutomationServiceProvider" --tag="assets"
+    php artisan vendor:publish --provider="Jmrashed\Automation\App\Providers\AutomationServiceProvider" --tag="assets"
 ```
 
 ## Contributing
+
 Thank you for considering contributing to UI! The contribution guide can be found in the Laravel documentation.
 
-
 ## Code of Conduct
+
 In order to ensure that the Laravel community is welcoming to all, please review and abide by the Code of Conduct.
 
 ## Security Vulnerabilities
+
 Please review our security policy on how to report security vulnerabilities.
 
-
-
 ## License
-Laravel Automation Package is open-sourced software licensed under the [MIT license](LICENSE).
 
-[//]: # (git tag -a v1.0.2 -m "my version 1.0.0.2")
+Laravel Automation Package is open-sourced software licensed under the [MIT license](LICENSE).

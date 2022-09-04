@@ -1,8 +1,6 @@
 <?php
 
-namespace Jmrashed\Automation\Traits;
-
-use Jmrashed\Automation\Models\DemoModel;
+namespace Jmrashed\Automation\App\Traits;
 
 trait HasAuthors
 {

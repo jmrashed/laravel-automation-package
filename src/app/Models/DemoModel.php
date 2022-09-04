@@ -1,6 +1,6 @@
 <?php
 
-namespace Jmrashed\Automation\Models;
+namespace Jmrashed\Automation\App\Models;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
@@ -19,12 +19,5 @@ class DemoModel extends Model
     protected static function newFactory()
     {
         return DemoFactory::new();
-    }
-
-
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
     }
 }
