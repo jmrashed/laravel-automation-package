@@ -18,7 +18,7 @@ class AutomationServiceProvider extends ServiceProvider
         });
 
 
-        $this->mergeConfigFrom(__DIR__ . '/config/config.php', 'automation');
+        // $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'automation');
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'automation');
 
     }
@@ -31,7 +31,6 @@ class AutomationServiceProvider extends ServiceProvider
 
 
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->registerRoutes();
 
 
