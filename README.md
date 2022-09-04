@@ -4,6 +4,12 @@
 
 This package help you to build a crud system without any coding.
 
+[![issues](https://img.shields.io/github/issues/jmrashed/laravel-automation-package)](https://img.shields.io/github/issues/jmrashed/laravel-automation-package)
+[![forks](https://img.shields.io/github/forks/jmrashed/laravel-automation-package)](https://img.shields.io/github/forks/jmrashed/laravel-automation-package)
+[![stars](https://img.shields.io/github/stars/jmrashed/laravel-automation-package)](https://img.shields.io/github/stars/jmrashed/laravel-automation-package)
+[![license](https://img.shields.io/github/license/jmrashed/laravel-automation-package)](https://img.shields.io/github/license/jmrashed/laravel-automation-package)
+[![](https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2F_rasheduzzaman)](https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2F_rasheduzzaman)
+
 ## Introduction
 
 This package help you to build a crud system without any coding.
