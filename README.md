@@ -93,5 +93,4 @@ Please review our security policy on how to report security vulnerabilities.
 
 
 ## License
-
-Laravel UI is open-sourced software licensed under the MIT license.
+Laravel Automation Package is open-sourced software licensed under the [MIT license](LICENSE).
