@@ -1,20 +1,31 @@
 <img src="Laravel-Automation-Package.jpg" width="1190"/>
 
-## Laravel Automation Package
+# Laravel Automation Package
 
 This package help you to build a crud system without any coding.
 
-## Installation
+## Introduction
+This package help you to build a crud system without any coding.
 
+## Supported Versions
+Only the latest major version of Laravel UI receives bug fixes. The table below lists compatible Laravel versions:
+
+| Version       | Laravel Version   |
+| ------------- | -------------     |
+| 1.x           | 7.x, 8.x          |
+| 2.x           | 9.x               |
+
+
+## Installation
 Require this package with composer. It is recommended to only require the package for development.
 
 ```
-    composer require jmrashed/automation --dev
+    composer require jmrashed/automation
 ```
 
 Laravel uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider.
 
-# Laravel without auto-discovery:
+## Laravel without auto-discovery:
 
 If you don't use auto-discovery, add the ServiceProvider to the providers array in config/app.php
 
@@ -23,8 +34,6 @@ If you don't use auto-discovery, add the ServiceProvider to the providers array 
     <?php
 
     'providers' => [
-        // Other Service Providers
-
         App\Providers\AutomationServiceProvider::class,
     ],
 ```
@@ -35,24 +44,54 @@ If you want to use the facade to log messages, add this to your facades in app.p
  'Automation' => Jmrashed\Automation\Facades\Automation::class,
 ```
 
-## publish
+## Publish Laravel Automation Package
 
 ```
-artisan vendor:publish --provider="Jmrashed\Automation\AutomationServiceProvider"
-
+    artisan vendor:publish --provider="Jmrashed\Automation\AutomationServiceProvider"
 ```
 
 ## Usage in Controller
 
 ```php
-// call automation
- Automation::create('Model');
-
+    // call automation
+    Automation::create('Model');
 ```
 
 ## Usage in Blade
 
-```php
-// call automation
+```
+    // call automation
     {{ automation('Model')}}
 ```
+
+
+
+The views can then be exported by users of our package using:
+
+```
+    php artisan vendor:publish --provider="Jmrashed\Automation\AutomationServiceProvider" --tag="views"
+```
+
+
+
+The assets can then be exported by users of our package using:
+
+```
+    php artisan vendor:publish --provider="Jmrashed\Automation\AutomationServiceProvider" --tag="assets"
+```
+
+## Contributing
+Thank you for considering contributing to UI! The contribution guide can be found in the Laravel documentation.
+
+
+## Code of Conduct
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the Code of Conduct.
+
+## Security Vulnerabilities
+Please review our security policy on how to report security vulnerabilities.
+
+
+
+## License
+
+Laravel UI is open-sourced software licensed under the MIT license.

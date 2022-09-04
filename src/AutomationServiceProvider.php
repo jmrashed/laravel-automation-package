@@ -1,6 +1,7 @@
 <?php
 
 namespace Jmrashed\Automation;
+use Illuminate\Contracts\Http\Kernel;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Console\Scheduling\Schedule;
@@ -18,11 +19,22 @@ class AutomationServiceProvider extends ServiceProvider
 
 
         $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'automation');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'automation');
+
     }
 
-    public function boot()
+    public function boot(Kernel $kernel)
     {
+        $kernel->pushMiddleware(AutomationMiddleware::class);
+        $router = $this->app->make(Router::class);
+        $router->aliasMiddleware('automation', AutomationMiddleware::class);
+
+
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        // $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        $this->registerRoutes();
+
+
 
         // Register the command if we are using the application via the CLI
         if ($this->app->runningInConsole()) {
@@ -38,8 +50,7 @@ class AutomationServiceProvider extends ServiceProvider
                 $schedule->command('some:command')->everyMinute();
             });
         }
-
-
+ 
         if ($this->app->runningInConsole()) {
 
             $this->publishes([
@@ -51,6 +62,37 @@ class AutomationServiceProvider extends ServiceProvider
                 database_path('migrations/' . date('Y_m_d_His', time()) . '_create_demos_table.php'),
                 // you can add any number of migrations here
             ], 'migrations');
+
+            // Publish views
+            $this->publishes([
+              __DIR__.'/../resources/views' => resource_path('views/vendor/automation'),
+            ], 'views');
+
+            // Publish assets
+            $this->publishes([
+                __DIR__.'/../resources/assets' => public_path('automation'),
+            ], 'assets');
+
         }
     }
+
+
+
+
+
+
+protected function registerRoutes()
+{
+    Route::group($this->routeConfiguration(), function () {
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+    });
+}
+
+protected function routeConfiguration()
+{
+    return [
+        'prefix' => config('automation.prefix'),
+        'middleware' => config('automation.middleware'),
+    ];
+}
 }
