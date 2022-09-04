@@ -18,7 +18,7 @@ class AutomationServiceProvider extends ServiceProvider
         });
 
 
-        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'automation');
+        $this->mergeConfigFrom(__DIR__ . '/config/config.php', 'automation');
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'automation');
 
     }

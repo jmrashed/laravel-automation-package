@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'prefix' => 'blogger',
+    'prefix' => 'automation',
     'middleware' => ['web'], 
 ];
