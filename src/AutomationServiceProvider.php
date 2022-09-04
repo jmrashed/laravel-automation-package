@@ -148,10 +148,7 @@ class AutomationServiceProvider extends ServiceProvider
         // Register the middleware
         $kernel->pushMiddleware(AutomationMiddleware::class);
 
-        // Register the middleware group
-        Route::middlewareGroup('automation', [
-            AutomationMiddleware::class,
-        ]);
+       
 
  
 
@@ -159,8 +156,7 @@ class AutomationServiceProvider extends ServiceProvider
         // router middleware 
 
         $router = $this->app->make(Router::class);
-        $router->aliasMiddleware('automation', DomainCheck::class);
-        $router->pushMiddlewareToGroup('web', DomainCheck::class);
+        $router->aliasMiddleware('automation', AutomationMiddleware::class);
 
          
     }
