@@ -9,12 +9,17 @@ class ComposerStaticInitcacb42554092916c27153a824fb95366
     public static $prefixLengthsPsr4 = array (
         'J' => 
         array (
+            'Jmrashed\\Automation\\Database\\Seeders\\' => 37,
             'Jmrashed\\Automation\\Database\\Factories\\' => 39,
             'Jmrashed\\Automation\\' => 20,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Jmrashed\\Automation\\Database\\Seeders\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/database/seeders',
+        ),
         'Jmrashed\\Automation\\Database\\Factories\\' => 
         array (
             0 => __DIR__ . '/../..' . '/database/factories',

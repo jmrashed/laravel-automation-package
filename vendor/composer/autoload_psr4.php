@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Jmrashed\\Automation\\Database\\Seeders\\' => array($baseDir . '/database/seeders'),
     'Jmrashed\\Automation\\Database\\Factories\\' => array($baseDir . '/database/factories'),
     'Jmrashed\\Automation\\' => array($baseDir . '/src'),
 );
